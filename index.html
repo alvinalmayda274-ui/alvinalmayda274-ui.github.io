@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f5f4ef">
+    <meta name="description" content="The portfolio of Your Name, a aspiring developer building thoughtful digital experiences.">
+    <title>ALVIN B. ALMAYDA | aspiring Developer</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --ink: #1d2723;
+        --muted: #64716a;
+        --paper: #f5f4ef;
+        --green: #245c46;
+        --lime: #d3ef91;
+        --line: #dce0d8;
+        --serif: Georgia, "Times New Roman", serif;
+        font-family: "Segoe UI", Arial, sans-serif;
+        font-synthesis: none;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body { margin: 0; background: var(--paper); color: var(--ink); }
+      a { color: inherit; }
+      .wrap { width: min(1080px, calc(100% - 48px)); margin-inline: auto; }
+
+      .topbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 88px;
+        border-bottom: 1px solid var(--line);
+      }
+      .brand { font-family: var(--serif); font-size: 22px; font-weight: 700; text-decoration: none; }
+      nav { display: flex; gap: 30px; }
+      nav a { color: var(--muted); font-size: 14px; text-decoration: none; }
+      nav a:hover, nav a:focus-visible { color: var(--green); }
+
+      .hero {
+        display: grid;
+        grid-template-columns: 1.5fr 0.7fr;
+        align-items: center;
+        gap: 56px;
+        min-height: 610px;
+        padding-block: 84px;
+      }
+      .eyebrow {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin: 0 0 24px;
+        color: var(--green);
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+      .dot { width: 8px; height: 8px; border-radius: 50%; background: #71a65e; }
+      h1 {
+        max-width: 700px;
+        margin: 0;
+        font-family: var(--serif);
+        font-size: clamp(54px, 8vw, 92px);
+        font-weight: 400;
+        letter-spacing: -0.065em;
+        line-height: 0.99;
+      }
+      h1 em { color: var(--green); font-weight: 400; }
+      .intro { max-width: 510px; margin: 26px 0 0; color: var(--muted); font-size: 18px; line-height: 1.7; }
+      .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 48px;
+        padding: 0 20px;
+        border: 1px solid var(--green);
+        border-radius: 3px;
+        background: var(--green);
+        color: white;
+        font-size: 14px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: background 160ms ease, color 160ms ease;
+      }
+      .button:hover { background: transparent; color: var(--green); }
+      .button.secondary { background: transparent; color: var(--green); }
+      .button.secondary:hover { background: var(--green); color: white; }
+
+      .portrait {
+        position: relative;
+        display: grid;
+        min-height: 340px;
+        place-items: center;
+        overflow: hidden;
+        background: #e6eadc;
+      }
+      .portrait::before, .portrait::after {
+        position: absolute;
+        width: 220px;
+        height: 220px;
+        border: 1px solid rgba(36, 92, 70, 0.22);
+        border-radius: 50%;
+        content: "";
+      }
+      .portrait::before { transform: translate(-18px, 14px); }
+      .portrait::after { transform: translate(18px, -14px); }
+      .portrait-mark { color: var(--green); font-family: var(--serif); font-size: 104px; letter-spacing: -0.1em; }
+      .portrait-note {
+        position: absolute;
+        right: 18px;
+        bottom: 18px;
+        color: var(--muted);
+        font-size: 11px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      section { padding-block: 82px; border-top: 1px solid var(--line); }
+      .section-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 24px; margin-bottom: 34px; }
+      h2 { margin: 0; font-family: var(--serif); font-size: clamp(36px, 5vw, 52px); font-weight: 400; letter-spacing: -0.045em; }
+      .section-label { color: var(--muted); font-size: 13px; }
+      .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; }
+      .about-grid p { margin: 0; color: var(--muted); font-size: 17px; line-height: 1.8; }
+      .about-grid p + p { margin-top: 16px; }
+      .skills { display: flex; flex-wrap: wrap; align-content: start; gap: 10px; }
+      .skill { padding: 10px 14px; border: 1px solid var(--line); border-radius: 999px; color: var(--green); font-size: 13px; }
+
+      .projects { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+      .project { padding: 28px; border: 1px solid var(--line); background: rgba(255,255,255,0.34); }
+      .project-top { display: flex; justify-content: space-between; gap: 16px; margin-bottom: 42px; color: var(--muted); font-size: 12px; }
+      .project-number { color: var(--green); font-weight: 700; }
+      .project h3 { margin: 0 0 10px; font-family: var(--serif); font-size: 28px; font-weight: 400; letter-spacing: -0.03em; }
+      .project p { max-width: 420px; margin: 0; color: var(--muted); font-size: 14px; line-height: 1.7; }
+      .project a { display: inline-block; margin-top: 22px; color: var(--green); font-size: 13px; font-weight: 700; text-decoration-thickness: 1px; text-underline-offset: 4px; }
+      .project a:hover { text-decoration-thickness: 2px; }
+
+      .contact {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: 32px;
+        padding: 54px;
+        background: var(--green);
+        color: white;
+      }
+      .contact .eyebrow { color: var(--lime); }
+      .contact h2 { max-width: 560px; }
+      .contact p { margin: 16px 0 0; color: rgba(255,255,255,0.74); line-height: 1.7; }
+      .contact .button { flex: 0 0 auto; border-color: var(--lime); background: var(--lime); color: var(--ink); }
+      .contact .button:hover { background: transparent; color: var(--lime); }
+      footer { display: flex; justify-content: space-between; gap: 20px; padding-block: 28px; color: var(--muted); font-size: 12px; }
+      footer a { text-decoration: none; }
+      footer a:hover { color: var(--green); }
+      a:focus-visible { outline: 3px solid #91b968; outline-offset: 4px; }
+
+      @media (max-width: 720px) {
+        .wrap { width: min(100% - 36px, 540px); }
+        .topbar { min-height: 72px; }
+        nav { gap: 16px; }
+        nav a { font-size: 12px; }
+        .hero { grid-template-columns: 1fr; gap: 38px; min-height: auto; padding-block: 72px; }
+        .portrait { min-height: 260px; }
+        .about-grid { grid-template-columns: 1fr; gap: 28px; }
+        .projects { grid-template-columns: 1fr; }
+        .contact { align-items: start; flex-direction: column; padding: 32px 24px; }
+        section { padding-block: 64px; }
+      }
+      @media (max-width: 420px) {
+        .wrap { width: calc(100% - 28px); }
+        .brand { font-size: 19px; }
+        nav { gap: 11px; }
+        nav a { font-size: 11px; }
+        .section-heading { align-items: start; flex-direction: column; gap: 8px; }
+        footer { flex-direction: column; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        html { scroll-behavior: auto; }
+        *, *::before, *::after { transition-duration: 0.01ms !important; }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="wrap topbar">
+      <a class="brand" href="#home">alvin almayda<span aria-hidden="true">.</span></a>
+      <nav aria-label="Main navigation">
+        <a href="#about">Aspiring Developer</a>
+        <a href="#work">Work</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <div class="wrap hero" id="home">
+        <div>
+          <p class="eyebrow"><span class="dot" aria-hidden="true"></span> Aspiring developer</p>
+          <h1>Making the web feel a little more <em>human.</em></h1>
+          <p class="intro">Hi, I'm Alvin B. Almayda A BSIT3D STUDENT. I'm currently pursuing my degree and building my skills in web development.</p>
+          <div class="actions">
+            <a class="button" href="#work">Explore my work</a>
+            <a class="button secondary" href="#contact">Get in touch</a>
+          </div>
+        </div>
+        <div class="portrait" role="img" aria-label="Decorative initials placeholder">
+          <span class="portrait-mark" aria-hidden="true">YN</span>
+          <span class="portrait-note">A little about me</span>
+        </div>
+      </div>
+
+      <section id="about">
+        <div class="wrap">
+          <div class="section-heading">
+            <h2>A bit about me</h2>
+            <span class="section-label">Curious by nature. Thoughtful by design.</span>
+          </div>
+          <div class="about-grid">
+            <div>
+              <p>I'm a creative problem-solver who enjoys turning complex ideas into simple, useful experiences. I care about the details, the people using what I make, and the difference thoughtful design can make.</p>
+              <p>When I'm away from my screen, you might find me exploring a new place, reading, or looking for a good cup of coffee.</p>
+            </div>
+            <div class="skills" aria-label="Skills">
+              <span class="skill">UI / UX design</span>
+              <span class="skill">Front-end development</span>
+              <span class="skill">Design systems</span>
+              <span class="skill">Prototyping</span>
+              <span class="skill">Creative direction</span>
+              <span class="skill">Accessibility</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="work">
+        <div class="wrap">
+          <div class="section-heading">
+            <h2>My work</h2>
+            <span class="section-label">A few things I've been working on</span>
+          </div>
+          <div class="projects">
+            <article class="project">
+              <div class="project-top"><span class="project-number">01 / Case study</span><span>2025</span></div>
+              <h3>Project One</h3>
+              <p>A short introduction to your project. What was the challenge, and how did your work make things better?</p>
+              <a href="https://github.com/alvinalmayda274-ui/INVENTORY-MANAGEMENT">View project <span aria-hidden="true">&rarr;</span></a>
+            </article>
+            <article class="project">
+              <div class="project-top"><span class="project-number">02 / Side project</span><span>2024</span></div>
+              <h3>Project Two</h3>
+              <p>Share what you made, who it was for, and one result or detail you're proud of. Keep it short and personal.</p>
+              <a href="https://github.com/">View project <span aria-hidden="true">&rarr;</span></a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact">
+        <div class="wrap contact">
+          <div>
+            <p class="eyebrow">Have a good one in mind?</p>
+            <h2>Let's make something meaningful.</h2>
+            <p>I'm always happy to hear about interesting projects and kind people.</p>
+          </div>
+          <a class="button" href="mailto:almaydaalvin6@gmail.com">Say hello <span aria-hidden="true">&nbsp;&rarr;</span></a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="wrap">
+      <span>&copy; <span id="year">2026</span> Alvin B. Almayda. Made with care.</span>
+      <a href="https://github.com/almaydaalvin6">GitHub <span aria-hidden="true">&uarr;</span></a>
+    </footer>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
